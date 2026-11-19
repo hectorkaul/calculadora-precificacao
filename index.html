@@ -14,6 +14,7 @@
       <p>Preço de venda em cada marketplace a partir dos seus custos, das taxas, do imposto e da margem que você quer ganhar.</p>
       <nav>
         <a href="#simulacao">Simulador</a>
+        <a href="#comparacao">Comparativo</a>
         <a href="#cadastros">Taxas e produtos</a>
       </nav>
     </div>
@@ -35,6 +36,15 @@
       <label class="seletor">Produto <select id="produto"></select></label>
       <div id="simulador" class="rolagem"></div>
       <p class="nota">O preço final arredonda o sugerido para cima, até o próximo ,90. Digite um valor em "Seu preço" para ver quanto sobra: a margem fica vermelha quando cai abaixo do mínimo.</p>
+    </section>
+
+    <section id="comparacao">
+      <div class="titulo-linha">
+        <h2>Comparativo</h2>
+        <button id="exportar" type="button">Exportar CSV</button>
+      </div>
+      <div id="comparativo" class="rolagem"></div>
+      <p class="nota">Em verde, o marketplace onde dá para cobrar menos e ainda ganhar a margem desejada.</p>
     </section>
 
     <section id="cadastros">

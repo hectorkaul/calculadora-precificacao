@@ -1,6 +1,7 @@
 import { carregar, salvar, exemplo } from './dados.js';
 import { tabelaEditavel, CAMPOS_TAXA, CAMPOS_PRODUTO, NOVA_TAXA, NOVO_PRODUTO } from './cadastro.js';
 import { desenharSimulador } from './simulador.js';
+import { desenharComparativo, comparativoCsv } from './comparativo.js';
 import { numero } from './formato.js';
 
 let estado = carregar();
@@ -16,6 +17,7 @@ function desenharTudo() {
 
 function desenharResultados() {
   desenharSimulador($('simulador'), $('produto'), estado);
+  desenharComparativo($('comparativo'), estado);
 }
 
 function mudou(redesenharTudo) {
@@ -38,6 +40,16 @@ $('restaurar').addEventListener('click', () => {
     estado = exemplo();
     mudou(true);
   }
+});
+
+$('exportar').addEventListener('click', () => {
+  // O ﻿ no começo faz o Excel reconhecer os acentos.
+  const arquivo = new Blob(['﻿' + comparativoCsv(estado)], { type: 'text/csv;charset=utf-8' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(arquivo);
+  link.download = 'comparativo-de-precos.csv';
+  link.click();
+  URL.revokeObjectURL(link.href);
 });
 
 desenharTudo();
