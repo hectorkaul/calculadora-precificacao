@@ -1,0 +1,9 @@
+{
+  "name": "calculadora-precificacao",
+  "version": "1.0.0",
+  "description": "Calcula o preço de venda em cada marketplace a partir dos custos, das taxas, do imposto e da margem desejada.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
