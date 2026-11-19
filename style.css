@@ -1,0 +1,108 @@
+:root {
+  --azul: #2f5d8a;
+  --azul-escuro: #1f3f5f;
+  --fundo: #f4f6f9;
+  --cartao: #ffffff;
+  --texto: #1f2933;
+  --suave: #5f6b7a;
+  --borda: #d8dee6;
+  --verde: #1e7a46;
+  --verde-fundo: #e3f4ea;
+  --vermelho: #b42318;
+  --vermelho-fundo: #fdecea;
+  --amarelo-fundo: #fff7d6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--texto);
+  background: var(--fundo);
+}
+
+.largura { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+
+.topo { background: var(--azul); color: #fff; padding: 28px 0 18px; }
+.topo h1 { margin: 0 0 4px; font-size: 1.7rem; }
+.topo p { margin: 0 0 14px; opacity: .9; max-width: 720px; }
+.topo nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.topo nav a { color: #fff; font-weight: 600; text-decoration: none; border-bottom: 2px solid transparent; }
+.topo nav a:hover { border-bottom-color: #fff; }
+
+main section {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin: 18px 0;
+}
+
+h2 { margin: 0 0 12px; font-size: 1.2rem; color: var(--azul-escuro); }
+#cadastros h2:not(:first-child) { margin-top: 26px; }
+
+.config { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 14px 24px; }
+.config label, .seletor { display: flex; flex-direction: column; gap: 4px; font-weight: 600; font-size: .9rem; }
+.config input { width: 140px; }
+.config button { margin-left: auto; }
+
+.titulo-linha { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.titulo-linha h2 { margin: 0; }
+
+input, select {
+  font: inherit;
+  padding: 6px 8px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--texto);
+}
+input:focus, select:focus { outline: 2px solid var(--azul); outline-offset: 1px; }
+select { min-width: 280px; max-width: 100%; margin-bottom: 12px; }
+
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--azul);
+  background: var(--azul);
+  color: #fff;
+  cursor: pointer;
+}
+button:hover { background: var(--azul-escuro); }
+button.secundario { background: #fff; color: var(--azul); }
+button.secundario:hover { background: #eef3f8; }
+button.remover { background: #fff; color: var(--vermelho); border-color: var(--borda); padding: 5px 10px; font-weight: 500; }
+#taxas > button, #produtos > button { margin-top: 10px; }
+
+.rolagem { overflow-x: auto; }
+
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+th, td { padding: 7px 9px; border-bottom: 1px solid var(--borda); text-align: left; white-space: nowrap; }
+th { background: #eef3f8; color: var(--azul-escuro); font-weight: 600; vertical-align: bottom; white-space: normal; min-width: 90px; }
+table.resultado td:not(:first-child) { text-align: right; }
+table.resultado td:first-child { font-weight: 600; }
+td input { width: 100%; min-width: 80px; }
+td input[type="text"] { min-width: 150px; }
+
+td.destaque { font-weight: 700; }
+td.melhor { background: var(--verde-fundo); color: var(--verde); font-weight: 700; }
+td.ok { color: var(--verde); font-weight: 600; }
+td.alerta { background: var(--vermelho-fundo); color: var(--vermelho); font-weight: 700; }
+
+.nota { color: var(--suave); font-size: .88rem; margin: 10px 0 0; }
+.aviso { background: var(--amarelo-fundo); border-radius: 6px; padding: 8px 12px; font-size: .9rem; }
+
+footer { color: var(--suave); font-size: .85rem; padding: 8px 16px 32px; }
+footer a { color: var(--azul); }
+
+@media (max-width: 640px) {
+  .topo h1 { font-size: 1.4rem; }
+  main section { padding: 14px; }
+  .config button { margin-left: 0; }
+  select { min-width: 0; width: 100%; }
+}

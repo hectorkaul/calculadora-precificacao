@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de Precificação para Marketplaces</title>
+  <meta name="description" content="Calcula o preço de venda em cada marketplace a partir dos custos, das taxas, do imposto e da margem desejada.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="largura">
+      <h1>Calculadora de Precificação</h1>
+      <p>Preço de venda em cada marketplace a partir dos seus custos, das taxas, do imposto e da margem que você quer ganhar.</p>
+      <nav>
+        <a href="#simulacao">Simulador</a>
+        <a href="#cadastros">Taxas e produtos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="largura">
+    <section class="config" aria-label="Configurações">
+      <label>Imposto sobre a venda (%)
+        <input id="imposto" type="number" step="any" min="0" inputmode="decimal">
+      </label>
+      <label>Margem mínima para o alerta (%)
+        <input id="margem-minima" type="number" step="any" min="0" inputmode="decimal">
+      </label>
+      <button id="restaurar" type="button" class="secundario">Restaurar exemplo</button>
+    </section>
+
+    <section id="simulacao">
+      <h2>Simulador</h2>
+      <label class="seletor">Produto <select id="produto"></select></label>
+      <div id="simulador" class="rolagem"></div>
+      <p class="nota">O preço final arredonda o sugerido para cima, até o próximo ,90. Digite um valor em "Seu preço" para ver quanto sobra: a margem fica vermelha quando cai abaixo do mínimo.</p>
+    </section>
+
+    <section id="cadastros">
+      <h2>Taxas dos marketplaces</h2>
+      <p class="aviso">Os valores que vêm preenchidos são <strong>exemplos</strong>, não as taxas oficiais. Troque pelas taxas da sua conta. Limite 0 = o marketplace não muda a regra por faixa de preço.</p>
+      <div id="taxas" class="rolagem"></div>
+
+      <h2>Produtos</h2>
+      <div id="produtos" class="rolagem"></div>
+    </section>
+  </main>
+
+  <footer class="largura">
+    Feito por Héctor Kaul dos Santos ·
+    <a href="https://github.com/hectorkaul/calculadora-precificacao">código no GitHub</a> ·
+    os dados ficam salvos só no seu navegador
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
